@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap");
 
 *,
 *::after,
@@ -6,7 +7,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Open Sans", "Courier New", Courier, monospace;
+  font-family: Geist, Verdana, Geneva, Tahoma, sans-serif;
   --primary-purple: #9000f0;
   --background-color: #000;
   --foreground-color: #fff;
@@ -47,13 +48,13 @@ body {
 }
 
 .logo {
-  font-family: "Saira Stencil", "Courier New", Courier, monospace;
+  font-family: "Saira Stencil", Verdana, Geneva, Tahoma, sans-serif;
   font-size: 32px;
   font-weight: bold;
 }
 
 .logo span {
-  font-family: "Saira Stencil", "Courier New", Courier, monospace;
+  font-family: "Saira Stencil", Verdana, Geneva, Tahoma, sans-serif;
   color: var(--primary-purple);
 }
 
