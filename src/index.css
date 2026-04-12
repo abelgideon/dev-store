@@ -466,3 +466,78 @@ body {
 }
 
 /* Cart Page End */
+
+/* Checkout Page Start */
+
+.checkout-header {
+  font-size: 50px;
+}
+
+.checkout-sub {
+  font-size: 20px;
+  color: var(--dark-foreground-color);
+  margin-bottom: 50px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 50px;
+  background-color: var(--gray-background);
+  border-radius: 8px;
+  gap: 25px;
+}
+
+#name,
+#email,
+#address {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 17px;
+  border: var(--dark-foreground-color) solid 2px;
+  background-color: transparent;
+  color: var(--foreground-color);
+}
+
+.checkout-form-label {
+  font-size: 20px;
+}
+
+.checkout-confirm-btn {
+  text-align: center;
+}
+
+.checkout-price {
+  color: var(--primary-purple);
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: var(--dark-foreground-color) solid 2px;
+  border-radius: 8px;
+}
+
+.checkout-item-name {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.checkout-item-price {
+  color: var(--primary-purple);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Checkout Page End */
