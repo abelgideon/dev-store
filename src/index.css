@@ -547,3 +547,58 @@ body {
 }
 
 /* Checkout Page End */
+
+/* Order Page Start */
+
+.orders-header {
+  font-size: 50px;
+}
+
+.orders-sub {
+  font-size: 20px;
+  color: var(--dark-foreground-color);
+  margin-bottom: 50px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--gray-background);
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.order-item-right {
+  color: var(--primary-purple);
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.orders-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.order-item-items {
+  color: var(--dark-foreground-color);
+  text-transform: uppercase;
+}
+
+@media (max-width: 580px) {
+  .order-item {
+    flex-direction: column;
+    padding: 15px;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Order Page End */
