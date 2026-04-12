@@ -540,4 +540,10 @@ body {
   gap: 10px;
 }
 
+@media (max-width: 580px) {
+  .checkout-form {
+    padding: 25px;
+  }
+}
+
 /* Checkout Page End */
