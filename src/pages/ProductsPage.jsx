@@ -32,12 +32,24 @@ function ProductsPage() {
         <Link className="product-card-link" to="/products/123">
           <ProductCard />
         </Link>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        <Link className="product-card-link" to="/products/123">
+          <ProductCard />
+        </Link>
+        <Link className="product-card-link" to="/products/123">
+          <ProductCard />
+        </Link>
+        <Link className="product-card-link" to="/products/123">
+          <ProductCard />
+        </Link>
+        <Link className="product-card-link" to="/products/123">
+          <ProductCard />
+        </Link>
+        <Link className="product-card-link" to="/products/123">
+          <ProductCard />
+        </Link>
+        <Link className="product-card-link" to="/products/123">
+          <ProductCard />
+        </Link>
       </div>
     </>
   );
