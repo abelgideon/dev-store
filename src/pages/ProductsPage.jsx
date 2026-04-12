@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 
 function ProductsPage() {
@@ -20,16 +21,17 @@ function ProductsPage() {
           </label>
           <select id="category">
             <option>Select category</option>
-            <option>Hello</option>
-            <option>Hello</option>
-            <option>Hello</option>
-            <option>Hello</option>
+            <option>Accessories</option>
+            <option>Books</option>
+            <option>Softwares</option>
           </select>
         </div>
       </div>
 
       <div className="products-display">
-        <ProductCard />
+        <Link className="product-card-link" to="/products/123">
+          <ProductCard />
+        </Link>
         <ProductCard />
         <ProductCard />
         <ProductCard />
