@@ -11,6 +11,7 @@
   --primary-purple: #9000f0;
   --background-color: #000;
   --foreground-color: #fff;
+  --dark-foreground-color: #a1a1a1;
 }
 
 body {
@@ -90,5 +91,62 @@ body {
   }
   .nav-bar {
     flex-wrap: wrap;
+  }
+}
+
+/* Home Page */
+
+.btn {
+  text-decoration: none;
+  color: var(--foreground-color);
+  background-color: var(--primary-purple);
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.hero-btn {
+  margin: 20px auto;
+  font-size: 25px;
+}
+
+.hero-header {
+  font-size: 70px;
+  line-height: 80px;
+  text-align: center;
+}
+
+.hero-second-line {
+  color: var(--primary-purple);
+}
+
+.hero-para {
+  font-size: 25px;
+  color: var(--dark-foreground-color);
+  max-width: 600px;
+  text-align: center;
+}
+
+.hero-section {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+@media (max-width: 775px) {
+  .hero-second-line {
+    display: none;
+  }
+  .hero-header-last {
+    color: var(--primary-purple);
+  }
+  .hero-para {
+    max-width: 400px;
+    font-size: 20px;
+  }
+  .hero-btn {
+    font-size: 20px;
   }
 }
