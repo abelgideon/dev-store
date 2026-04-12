@@ -136,8 +136,16 @@ body {
 }
 
 @media (max-width: 775px) {
+  .hero-section {
+    margin-top: 60px;
+    align-items: flex-start;
+  }
   .hero-second-line {
     display: none;
+  }
+  .hero-header,
+  .hero-para {
+    text-align: left;
   }
   .hero-header-last {
     color: var(--primary-purple);
@@ -148,5 +156,6 @@ body {
   }
   .hero-btn {
     font-size: 20px;
+    margin-left: 0;
   }
 }
