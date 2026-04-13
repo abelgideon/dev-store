@@ -1,11 +1,10 @@
-function ProductCard() {
+function ProductCard({ imageUrl, name, price, shortDescription }) {
   return (
     <div className="product-card">
-      <img className="product-card-img" src="/products/keyboard.jpg" alt="" />
+      <img className="product-card-img" src={imageUrl} alt={name} />
       <div className="product-card-details">
-        <p className="product-card-name">Keyboard</p>
-        <p className="product-card-price">$12.33</p>
-        <p className="product-card-description">Membrane Keyboard</p>
+        <p className="product-card-name">{name}</p>
+        <p className="product-card-price">${price}</p>
       </div>
     </div>
   );
