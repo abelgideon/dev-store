@@ -1,8 +1,12 @@
-function CheckoutItem() {
+function CheckoutItem({ item }) {
   return (
     <div className="checkout-item">
-      <p className="checkout-item-name">Keyboard X1</p>
-      <p className="checkout-item-price">$12.32</p>
+      <p className="checkout-item-name">
+        {item.name} X{item.quantity}
+      </p>
+      <p className="checkout-item-price">
+        ${(item.price * item.quantity).toFixed(2)}
+      </p>
     </div>
   );
 }

@@ -1,12 +1,16 @@
-function OrderItem() {
+function OrderItem({ order }) {
   return (
     <div className="order-item">
       <div className="div order-item-left">
-        <p className="order-item-date">12/04/2026</p>
-        <h1>Order ID 123</h1>
-        <p className="order-item-items">Keyboard x1, Mouse x1, Antivirus x1</p>
+        <p className="order-item-date">{order.date}</p>
+        <h1>{order.id}</h1>
+        <p className="order-item-items">
+          {order.items
+            .map((item) => `${item.name} X${item.quantity}`)
+            .join(", ")}
+        </p>
       </div>
-      <p className="order-item-right">$100.29</p>
+      <p className="order-item-right">${order.total.toFixed(2)}</p>
     </div>
   );
 }

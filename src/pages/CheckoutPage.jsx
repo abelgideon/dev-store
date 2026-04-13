@@ -1,7 +1,35 @@
 import { Link } from "react-router-dom";
 import CheckoutItem from "../components/CheckoutItem";
+import { useCart } from "../context/CartContext";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutPage() {
+  const { cart, clearCart } = useCart();
+  const navigate = useNavigate();
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newOrder = {
+      id: "ORD-" + Date.now(),
+      date: new Date().toLocaleDateString(),
+      items: cart,
+      total,
+    };
+
+    const existingOrders = JSON.parse(localStorage.getItem("orders")) || [];
+
+    localStorage.setItem(
+      "orders",
+      JSON.stringify([...existingOrders, newOrder]),
+    );
+
+    clearCart();
+    navigate("/orders");
+  };
+
   return (
     <>
       <h1 className="checkout-header">Checkout</h1>
@@ -9,7 +37,7 @@ function CheckoutPage() {
         Enter personal information and review order
       </p>
 
-      <form className="checkout-form">
+      <form className="checkout-form" onSubmit={handleSubmit}>
         <div>
           <label className="checkout-form-label" htmlFor="name">
             Name
@@ -52,18 +80,18 @@ function CheckoutPage() {
         <div>
           <p className="checkout-form-label">Items</p>
           <div className="checkout-items">
-            <CheckoutItem />
-            <CheckoutItem />
-            <CheckoutItem />
+            {cart.map((item) => (
+              <CheckoutItem key={item.id} item={item} />
+            ))}
           </div>
         </div>
 
         <h1>
-          Total: <span className="checkout-price">$100.29</span>
+          Total: <span className="checkout-price">${total}</span>
         </h1>
-        <Link to="/orders" className="btn checkout-confirm-btn">
+        <button type="submit" className="btn checkout-confirm-btn">
           Confirm
-        </Link>
+        </button>
       </form>
     </>
   );
