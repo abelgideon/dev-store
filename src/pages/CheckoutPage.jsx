@@ -26,6 +26,8 @@ function CheckoutPage() {
       JSON.stringify([...existingOrders, newOrder]),
     );
 
+    alert("Order confirmed successfully");
+
     clearCart();
     navigate("/orders");
   };
