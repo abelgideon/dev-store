@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 function NavContent() {
   return (
@@ -36,6 +37,8 @@ function NavContent() {
 
 function Navbar() {
   const [open, isOpen] = useState(false);
+  const { cart } = useCart();
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   const toggleHamburger = () => {
     isOpen(!open);
@@ -65,13 +68,14 @@ function Navbar() {
         <NavContent />
       </div>
 
-      <Link to="/cart">
+      <Link className="cart-container" to="/cart">
         <img
           className="cart-img"
           src="/images/shopping-cart.png"
           alt="icon of a shopping cart"
           width={25}
         />
+        {totalItems > 0 && <span className="items-in-cart">{totalItems}</span>}
       </Link>
     </nav>
   );

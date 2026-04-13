@@ -1,22 +1,26 @@
+import { useCart } from "../context/CartContext";
 import ProductCard from "./ProductCard";
 
-function CartItem() {
+function CartItem({ item }) {
+  const { increaseQty, decreaseQty, removeItem } = useCart();
+
   return (
     <div className="cart-item">
       <div className="cart-item-controls">
         <div className="quantity-control">
-          <button>-</button>
-          <span className="quantity">1</span>
-          <button>+</button>
+          <button onClick={() => decreaseQty(item.id)}>-</button>
+          <span className="quantity">{item.quantity}</span>
+          <button onClick={() => increaseQty(item.id)}>+</button>
         </div>
         <img
           className="delete-btn"
           src="/images/delete.png"
           alt="delete icon"
           width={35}
+          onClick={() => removeItem(item.id)}
         />
       </div>
-      <ProductCard />
+      <ProductCard imageUrl={item.image} name={item.name} price={item.price} />
     </div>
   );
 }

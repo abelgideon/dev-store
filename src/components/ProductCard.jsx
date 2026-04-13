@@ -1,4 +1,4 @@
-function ProductCard({ imageUrl, name, price, shortDescription }) {
+function ProductCard({ imageUrl, name, price }) {
   return (
     <div className="product-card">
       <img className="product-card-img" src={imageUrl} alt={name} />

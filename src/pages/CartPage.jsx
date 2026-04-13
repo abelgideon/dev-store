@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
 import CartItem from "../components/CartItem";
+import { useCart } from "../context/CartContext";
 
 function CartPage() {
+  const { cart } = useCart();
+
+  const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   return (
     <>
       <h1 className="cart-header">Cart</h1>
@@ -10,15 +13,13 @@ function CartPage() {
 
       <div className="cart-display">
         <div className="cart-items">
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cart.map((item) => (
+            <CartItem key={item.id} item={item} />
+          ))}
         </div>
         <div className="cart-checkout">
           <h1>
-            Total: <span className="cart-price">$100.99</span>
+            Total: <span className="cart-price">${total.toFixed(2)}</span>
           </h1>
           <Link to="/checkout" className="checkout-btn btn">
             Checkout
