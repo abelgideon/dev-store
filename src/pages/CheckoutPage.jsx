@@ -87,7 +87,7 @@ function CheckoutPage() {
         </div>
 
         <h1>
-          Total: <span className="checkout-price">${total}</span>
+          Total: <span className="checkout-price">${total.toFixed(2)}</span>
         </h1>
         <button type="submit" className="btn checkout-confirm-btn">
           Confirm
