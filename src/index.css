@@ -234,7 +234,6 @@ body {
 .product-card {
   background-color: var(--gray-background);
   width: 100%;
-  max-width: 400px;
   height: 100%;
   border-radius: 8px;
   display: flex;
@@ -282,7 +281,7 @@ body {
 .products-display {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 30px;
+  gap: 50px;
   width: 80%;
   margin: 50px auto;
   justify-items: center;
