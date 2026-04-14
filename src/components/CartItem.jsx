@@ -8,9 +8,19 @@ function CartItem({ item }) {
     <div className="cart-item">
       <div className="cart-item-controls">
         <div className="quantity-control">
-          <button onClick={() => decreaseQty(item.id)}>-</button>
+          <button
+            className="plus-quantity"
+            onClick={() => decreaseQty(item.id)}
+          >
+            -
+          </button>
           <span className="quantity">{item.quantity}</span>
-          <button onClick={() => increaseQty(item.id)}>+</button>
+          <button
+            className="minus-quantity"
+            onClick={() => increaseQty(item.id)}
+          >
+            +
+          </button>
         </div>
         <img
           className="delete-btn"
