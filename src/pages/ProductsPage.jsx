@@ -71,6 +71,7 @@ function ProductsPage() {
               name={product.name}
               imageUrl={product.image}
               price={product.price}
+              stock={product.stock}
             />
           </Link>
         ))}

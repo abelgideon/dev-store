@@ -76,7 +76,7 @@ const products = [
     category: "Accessories",
     description:
       "This keyboard cover is designed to protect your device from dust, spills, and everyday wear. Made from flexible and durable material, it fits snugly over your keyboard without affecting typing performance. It is easy to clean and maintain, ensuring your keyboard stays in good condition for longer. Ideal for both home and office environments, this accessory provides an extra layer of protection while maintaining a clean and professional appearance.",
-    stock: 35,
+    stock: 0,
     image: "/products/accessories.jpg",
   },
   {
