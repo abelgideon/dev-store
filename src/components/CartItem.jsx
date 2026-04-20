@@ -18,6 +18,7 @@ function CartItem({ item }) {
           <button
             className="minus-quantity"
             onClick={() => increaseQty(item.id)}
+            disabled={item.quantity >= item.stock}
           >
             +
           </button>
