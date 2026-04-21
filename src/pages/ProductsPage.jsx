@@ -7,7 +7,9 @@ import { getSearches, saveSearch } from "../utils/searchCache";
 
 function ProductsPage() {
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState(
+    sessionStorage.getItem("category") || "",
+  );
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [recentSearches, setRecentSearches] = useState([]);
@@ -25,6 +27,7 @@ function ProductsPage() {
 
   const handleCategory = (e) => {
     setCategory(e.target.value);
+    sessionStorage.setItem("category", e.target.value);
   };
 
   useEffect(() => {
