@@ -84,14 +84,16 @@ function ProductsPage() {
         </div>
       </div>
 
-      <div className="search-suggestions">
-        <p>Recent Searches: </p>
-        {recentSearches.map((s, i) => (
-          <button key={i} onClick={() => setSearch(s)} className="suggestion">
-            {s}
-          </button>
-        ))}
-      </div>
+      {recentSearches.length > 0 && (
+        <div className="search-suggestions">
+          <p>Recent Searches: </p>
+          {recentSearches.map((s, i) => (
+            <button key={i} onClick={() => setSearch(s)} className="suggestion">
+              {s}
+            </button>
+          ))}
+        </div>
+      )}
 
       {loading ? (
         <h1 className="loading">Loading...</h1>
