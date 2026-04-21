@@ -1,16 +1,57 @@
-# React + Vite
+# DevStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+DevStore is a frontend eCommerce web application built with React. It allows users to browse products, add items to a cart, simulate checkout, and view order history.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Features
 
-## React Compiler
+- Browse products by category
+- Search and filter products
+- Add to cart with quantity control
+- Prevent adding more items than available stock
+- Persistent cart using `localStorage`
+- Simulated checkout process
+- Order history stored in `localStorage`
+- Product data caching (with simulated network delay)
+- Recent search suggestions (last 3 searches)
+- Responsive design
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- React Router
+- CSS (Flexbox & Grid)
+- LocalStorage / SessionStorage
+
+---
+
+## 📂 Pages
+
+- Home
+- Products
+- Product Details
+- Cart
+- Checkout
+- Orders
+
+---
+
+## ⚙️ Installation
+
+```bash
+git clone https://github.com/your-username/devstore.git
+cd devstore
+npm install
+npm run dev
+```
+
+---
+
+## 🌐 Deployment
+
+This project is deployed on Vercel:
+
+👉 [https://dev-store-eta.vercel.app](https://dev-store-eta.vercel.app)
