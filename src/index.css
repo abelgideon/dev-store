@@ -241,6 +241,29 @@ body {
   color: var(--foreground-color);
 }
 
+.search-suggestions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.search-suggestions p {
+  font-size: 20px;
+  margin-right: 10px;
+  color: var(--dark-foreground-color);
+}
+
+.suggestion {
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 17px;
+  border: none;
+  background-color: var(--gray-background);
+  color: var(--foreground-color);
+}
+
 #category {
   background-color: var(--background-color);
 }

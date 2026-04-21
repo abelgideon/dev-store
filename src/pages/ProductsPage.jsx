@@ -3,15 +3,24 @@ import ProductCard from "../components/ProductCard";
 import initialProducts from "../products";
 import { useEffect, useState } from "react";
 import { loadProducts } from "../utils/loadProducts";
+import { getSearches, saveSearch } from "../utils/searchCache";
 
 function ProductsPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [recentSearches, setRecentSearches] = useState([]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      saveSearch(search);
+      setRecentSearches(getSearches());
+    }
   };
 
   const handleCategory = (e) => {
@@ -23,6 +32,10 @@ function ProductsPage() {
       setProducts(data);
       setLoading(false);
     });
+  }, []);
+
+  useEffect(() => {
+    setRecentSearches(getSearches());
   }, []);
 
   let filteredProducts = products
@@ -49,6 +62,7 @@ function ProductsPage() {
             placeholder="Enter product name"
             value={search}
             onChange={handleSearch}
+            onKeyDown={handleKeyDown}
             id="search"
             type="text"
             name="search"
@@ -68,6 +82,15 @@ function ProductsPage() {
             <option value="Learning Resources">Learning Resources</option>
           </select>
         </div>
+      </div>
+
+      <div className="search-suggestions">
+        <p>Recent Searches: </p>
+        {recentSearches.map((s, i) => (
+          <button key={i} onClick={() => setSearch(s)} className="suggestion">
+            {s}
+          </button>
+        ))}
       </div>
 
       {loading ? (
