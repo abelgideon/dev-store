@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
-import products from "../products";
-import { useState } from "react";
+import initialProducts from "../products";
+import { useEffect, useState } from "react";
+import { loadProducts } from "../utils/loadProducts";
 
 function ProductsPage() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("");
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -14,6 +17,13 @@ function ProductsPage() {
   const handleCategory = (e) => {
     setCategory(e.target.value);
   };
+
+  useEffect(() => {
+    loadProducts(initialProducts).then((data) => {
+      setProducts(data);
+      setLoading(false);
+    });
+  }, []);
 
   let filteredProducts = products
     .filter((product) =>
@@ -60,22 +70,26 @@ function ProductsPage() {
         </div>
       </div>
 
-      <div className="products-display">
-        {filteredProducts.map((product) => (
-          <Link
-            key={product.id}
-            className="product-card-link"
-            to={`/products/${product.id}`}
-          >
-            <ProductCard
-              name={product.name}
-              imageUrl={product.image}
-              price={product.price}
-              stock={product.stock}
-            />
-          </Link>
-        ))}
-      </div>
+      {loading ? (
+        <h1 className="loading">Loading...</h1>
+      ) : (
+        <div className="products-display">
+          {filteredProducts.map((product) => (
+            <Link
+              key={product.id}
+              className="product-card-link"
+              to={`/products/${product.id}`}
+            >
+              <ProductCard
+                name={product.name}
+                imageUrl={product.image}
+                price={product.price}
+                stock={product.stock}
+              />
+            </Link>
+          ))}
+        </div>
+      )}
     </>
   );
 }

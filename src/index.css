@@ -225,6 +225,11 @@ body {
   margin-right: 10px;
 }
 
+.loading {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
 #search,
 #category {
   width: 100%;
